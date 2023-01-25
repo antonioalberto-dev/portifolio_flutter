@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:portifolio/components/my_info.dart';
+import 'package:portifolio/constants.dart';
+
+import 'area_information.dart';
+import 'skills_item.dart';
 
 class SideMenu extends StatefulWidget {
   const SideMenu({Key? key}) : super(key: key);
@@ -13,29 +18,40 @@ class _SideMenuState extends State<SideMenu> {
     return Drawer(
       child: Column(
         children: [
-          AspectRatio(
-            aspectRatio: 1.20,
-            child: Container(
-              padding: EdgeInsets.all(20),
+          const MyInfo(),
+          Expanded(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(defaultPadding),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Spacer(flex: 2),
-                  const CircleAvatar(
-                    radius: 35, // mudar valor
-                    backgroundImage: AssetImage("assets/images/perfil.jpg"),
+                  const AreaInformation(prefix: "Cidade", sufix: "Coari"),
+                  const AreaInformation(
+                      prefix: "Residencia", sufix: "Itacoatiara"),
+                  const AreaInformation(prefix: "Idade", sufix: "23"),
+                  const Divider(),
+                  Text("Skills",
+                      style: Theme.of(context).textTheme.titleMedium),
+                  const SizedBox(height: defaultPadding),
+                  Row(
+                    children: const [
+                      Expanded(
+                        child: SkillsItem(label: "Flutter", percent: 0.67),
+                      ),
+                      SizedBox(width: defaultPadding),
+                      Expanded(
+                        child: SkillsItem(label: "React", percent: 0.24),
+                      ),
+                      SizedBox(width: defaultPadding),
+                      Expanded(
+                        child: SkillsItem(label: "Node", percent: 0.20),
+                      ),
+                    ],
                   ),
-                  Text(
-                    "Antonio Alberto",
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                  Text("Engenheiro de Software"),
-                  Text("Desenvolvedor Mobile"),
-                  Spacer(flex: 2),
+                  const Divider(),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
