@@ -49,6 +49,7 @@ class _SideMenuState extends State<SideMenu> {
                   ),
                   const SizedBox(height: defaultPadding),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Expanded(
                         child: SkillsItem(label: "Flutter", percent: 0.67),
@@ -61,7 +62,6 @@ class _SideMenuState extends State<SideMenu> {
                       Expanded(
                         child: SkillsItem(label: "Node", percent: 0.20),
                       ),
-                      SizedBox(width: defaultPadding),
                     ],
                   ),
                   const SizedBox(height: defaultPadding),
@@ -75,13 +75,52 @@ class _SideMenuState extends State<SideMenu> {
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ),
-                  Knowledge(),
+                  const Knowledge(),
+                  const SizedBox(height: defaultPadding),
+                  const Divider(),
+                  const SizedBox(height: defaultPadding),
+                  const Download(),
+                  const SizedBox(height: defaultPadding),
+                  const Divider(),
+                  const SizedBox(height: defaultPadding),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: SvgPicture.asset("assets/icons/github.svg"),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: SvgPicture.asset("assets/icons/linkedin.svg"),
+                      ),
+                    ],
+                  ),
+                  // const SizedBox(height: defaultPadding),
                 ],
               ),
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class Download extends StatelessWidget {
+  const Download({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text("Baixar"),
+        const SizedBox(width: defaultPadding / 3),
+        SvgPicture.asset("assets/icons/download.svg")
+      ],
     );
   }
 }
