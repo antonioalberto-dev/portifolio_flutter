@@ -15,10 +15,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Center(
         child: Container(
-          constraints: BoxConstraints(maxWidth: maxWidth),
+          constraints: const BoxConstraints(maxWidth: maxWidth),
           child: Row(
             children: [
-              Expanded(
+              const Expanded(
                 flex: 2,
                 child: SideMenu(),
               ),

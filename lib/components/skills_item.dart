@@ -29,15 +29,17 @@ class SkillsItem extends StatelessWidget {
                   color: primaryColor,
                   backgroundColor: darkColor,
                 ),
-                Center(child: Text((value * 100).toInt().toString() + "%")),
+                Center(child: Text("${(value * 100).toInt()}%")),
               ],
             ),
           ),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: defaultPadding / 2),
         Text(
           label,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: const TextStyle(
+            color: Colors.white,
+          ),
         ),
       ],
     );

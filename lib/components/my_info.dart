@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portifolio/constants.dart';
 
 class MyInfo extends StatelessWidget {
   const MyInfo({Key? key}) : super(key: key);
@@ -6,9 +7,10 @@ class MyInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1.20,
+      aspectRatio: 1.70,
       child: Container(
-        padding: const EdgeInsets.all(20),
+        color: darkColor,
+        padding: const EdgeInsets.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
