@@ -12,7 +12,7 @@ class HomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 4,
+      aspectRatio: 4.5,
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -24,7 +24,7 @@ class HomeBanner extends StatelessWidget {
             color: darkColor.withOpacity(0.96),
           ),
           Padding(
-            padding: const EdgeInsets.all(defaultPadding),
+            padding: const EdgeInsets.symmetric(vertical: defaultPadding, horizontal: defaultPadding * 2),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
