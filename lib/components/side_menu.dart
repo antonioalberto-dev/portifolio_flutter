@@ -45,7 +45,7 @@ class _SideMenuState extends State<SideMenu> {
                   const SizedBox(height: defaultPadding),
                   Text(
                     "Skills",
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: Theme.of(context).textTheme.titleSmall,
                   ),
                   const SizedBox(height: defaultPadding),
                   Row(
@@ -72,7 +72,7 @@ class _SideMenuState extends State<SideMenu> {
                         const EdgeInsets.symmetric(vertical: defaultPadding),
                     child: Text(
                       "Knowledge",
-                      style: Theme.of(context).textTheme.titleMedium,
+                      style: Theme.of(context).textTheme.titleSmall,
                     ),
                   ),
                   const Knowledge(),

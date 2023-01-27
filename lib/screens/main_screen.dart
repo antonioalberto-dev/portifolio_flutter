@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:portifolio/components/side_menu.dart';
 import 'package:portifolio/constants.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class MainScreen extends StatelessWidget {
+  const MainScreen({Key? key, required this.children}) : super(key: key);
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
+  final List<Widget> children;
 
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,33 +14,28 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           constraints: const BoxConstraints(maxWidth: maxWidth),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Expanded(
                 flex: 2,
                 child: SideMenu(),
               ),
+              const SizedBox(width: defaultPadding),
               Expanded(
                 flex: 7,
-                child: Container(
-                  color: Colors.cyan,
+                child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      Expanded(
-                        flex: 2,
-                        child: Container(
-                          color: Colors.white,
-                        ),
-                      ),
-                      Expanded(
-                        flex: 7,
-                        child: Container(
-                          color: Colors.blueGrey,
-                        ),
+                      Column(
+                        children: [
+                          ...children,
+                        ],
                       ),
                     ],
                   ),
                 ),
               ),
+              const SizedBox(width: defaultPadding),
             ],
           ),
         ),

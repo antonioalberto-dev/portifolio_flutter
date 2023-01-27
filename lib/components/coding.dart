@@ -15,12 +15,11 @@ class Coding extends StatelessWidget {
       children: [
         const Divider(),
         const SizedBox(height: defaultPadding),
-        // const SizedBox(height: defaultPadding / 2),
         Text(
           "Coding",
-          style: Theme.of(context).textTheme.titleMedium,
+          style: Theme.of(context).textTheme.titleSmall,
         ),
-        const SizedBox(height: defaultPadding / 2),
+        const SizedBox(height: defaultPadding),
         const CodingItem(label: "Dart", value: 0.54),
         const SizedBox(height: defaultPadding / 2),
         const CodingItem(label: "Javascript", value: 0.7),
